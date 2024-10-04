@@ -63,13 +63,13 @@ Make sure you have the following installed:
 ### API Endpoints
 
 **Authentication**
-POST /api/login/: Login user and retrieve JWT token
-POST /api/signup/: Register a new user
+- POST /api/login/: Login user and retrieve JWT token
+- POST /api/signup/: Register a new user
 
 **Transactions**
-GET /api/user-transactions/: Retrieve all transactions for the authenticated user
-POST /api/user-transactions/: Add a new transaction
-DELETE /api/user-transactions/<id>/: Delete a transaction
+- GET /api/user-transactions/: Retrieve all transactions for the authenticated user
+- POST /api/user-transactions/: Add a new transaction
+- DELETE /api/user-transactions/<id>/: Delete a transaction
 
 ### Usage
 - After setting up the application, 
