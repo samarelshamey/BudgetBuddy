@@ -48,17 +48,19 @@ Make sure you have the following installed:
    cd budget-buddy
 
 2. **Set up the backend:**
-    - cd backend
-    - python -m venv venv
-    - source venv/bin/activate
-    - pip install -r requirements.txt
-    - python manage.py migrate
-    - python manage.py runserver
+    ```bash
+    cd backend
+    python -m venv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+    python manage.py migrate
+    python manage.py runserver
 
 3. **Set up the frontend:**
-    - cd ../frontend
-    - npm install
-    - npm start
+    ```bash
+    cd ../frontend
+    npm install
+    npm start
 
 ### API Endpoints
 
