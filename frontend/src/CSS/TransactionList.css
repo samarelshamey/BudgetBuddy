@@ -1,0 +1,63 @@
+:root{
+    --heading-color: #343a40;
+}
+
+.transaction_list {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: var(--heading-color);
+    text-align: center;
+    margin: 0;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.list li {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 6px;
+    transition: transform 0.3s ease; /* Smooth list hover effect */
+}
+
+.list li.plus {
+    border-right: 5px solid #2ecc71;
+}
+
+.list li.minus {
+    border-right: 5px solid #e74c3c;
+}
+
+.list li:hover {
+    transform: translateY(-3px);
+}
+
+.delete-btn {
+    cursor: pointer;
+    background-color: #e74c3c;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 5px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.list li:hover .delete-btn {
+    opacity: 1;
+}

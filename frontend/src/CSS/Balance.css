@@ -1,0 +1,23 @@
+/* Balance.css */
+
+.balance-heading {
+    color: #333;               /* Dark grey color for the subtitle */
+    font-size: 30px;          /* Font size for the subtitle */
+    margin-top: 30px;
+    margin-bottom: 10px;      /* Space below the subtitle */
+    text-align: center;
+}
+
+h1 {
+    color: #4CAF50;           /* Green color for the balance */
+    font-size: 32px;          /* Font size for the balance */
+    margin: 0;                /* Remove default margin */
+    font-weight: bold;        /* Bold font for emphasis */
+    text-align: center;
+}
+
+.balance-container {
+    padding: 20px;            /* Add padding around the balance component */
+    background-color: #f9f9f9; /* Optional background color */
+    border-radius: 5px;      /* Optional border radius */
+}

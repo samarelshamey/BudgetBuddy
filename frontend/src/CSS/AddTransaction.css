@@ -1,0 +1,91 @@
+/* AddTransaction.css */
+:root {
+    --primary-color: #007bff;
+    --heading-color: #343a40;
+    --border-color: #dee2e6;
+    --btn-faded: linear-gradient(135deg, #8c77ff, #a594ff);
+    --btn-active: linear-gradient(135deg, #0795ee, #03a9f4);
+    --btn-hover: linear-gradient(135deg, #027bce, #0359a3);
+    --btn-clicked: linear-gradient(135deg, #6248ff, #8c77ff);
+    --btn-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    --btn-hover-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+}
+h3 {
+    font-family: 'Lato', sans-serif;
+    /* font-weight: 600; */
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    margin: 20px 0 10px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.form-control {
+    margin-bottom: 15px; /* Space below each form control */
+}
+
+label {
+    display: inline-block;
+    font-weight: 600;
+    margin: 10px 0 5px;
+    font-size: 0.9rem;
+}
+
+input[type='text'], input[type='number'] {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 12px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+input[type='text']:focus, input[type='number']:focus {
+    border-color: var(--primary-color);
+}
+
+.btn {
+    cursor: pointer;
+    background: var(--btn-faded); /* Default faded state */
+    box-shadow: var(--box-shadow), var(--btn-shadow); /* Add button shadow */
+    color: #fff;
+    border: 0;
+    display: block;
+    font-size: 16px;
+    margin: 10px 0 30px;
+    padding: 10px;
+    width: 100%;
+    transition: background 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0.7;
+}
+
+.btn.active {
+    background: var(--btn-active); /* Active button state */
+    opacity: 1;
+}
+
+.btn.clicked {
+    background: var(--btn-clicked); /* Button when clicked */
+}
+
+.btn:hover {
+    background: var(--btn-hover); /* Button on hover */
+    box-shadow: var(--box-shadow), var(--btn-hover-shadow); /* Enhanced shadow */
+}
+
+.btn:focus,
+.delete-btn:focus {
+    outline: 0;
+}
+
+.transaction-type {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5px 0; /* Margin above and below the transaction type */
+}
+
+
+.transaction-type label:last-child {
+    margin-right: 0; /* Remove margin from the last label to reduce space */
+}

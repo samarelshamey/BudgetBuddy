@@ -1,0 +1,50 @@
+:root {
+    --heading-color: #343a40;
+    --border-color: #dee2e6;
+
+}
+
+.income-expenses-heading {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: var(--heading-color);
+    text-align: center;
+    margin: 0;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.inc-exp-container {
+    background-color: #e9ecef;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+.inc-exp-container > div {
+    flex: 1;
+    text-align: center;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.inc-exp-container > div:first-of-type {
+    border-right: 1px solid var(--border-color);
+}
+
+.money {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    margin: 5px 0;
+}
+
+.money.plus {
+    color: #27ae60; /* Softer green */
+}
+
+.money.minus {
+    color: #e74c3c; /* Softer red */
+}

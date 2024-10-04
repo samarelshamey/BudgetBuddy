@@ -1,0 +1,14 @@
+:root{
+    --heading-color: #343a40;
+}
+
+.Transaction {
+    margin: 10px 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--heading-color);
+    text-align: center;
+    margin: 0;
+}
