@@ -1,7 +1,6 @@
 from django.urls import path
 from api.views import CustomTokenObtainPairView
-from api.views import signup_view
-from .views import transaction_view
+from api.views import transaction_view
 from django.contrib import admin
 
 urlpatterns = [

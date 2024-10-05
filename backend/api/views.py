@@ -17,17 +17,6 @@ from rest_framework.permissions import IsAuthenticated
 class SignupView(generics.CreateAPIView):
     serializer_class = UserSerializer
 
-class LoginView(generics.GenericAPIView):
-    def post(self, request, *args, **kwargs):
-        username = request.data.get('username')
-        password = request.data.get('password')
-        user = authenticate(username=username, password=password)
-        if user:
-            token, created = Token.objects.get_or_create(user=user)
-            return Response({'access': token.key})
-        return Response({'error': 'Invalid username or password'}, status=400)
-    
-
 class CustomTokenObtainPairView(TokenObtainPairView):
     serializer_class = TokenObtainPairSerializer
     permission_classes = [permissions.AllowAny]
@@ -42,12 +31,24 @@ class CustomTokenObtainPairView(TokenObtainPairView):
 @permission_classes([IsAuthenticated])
 def user_transactions_view(request):
     user = request.user
-    if user.is_authenticated:
-        transactions = Transaction.objects.filter(user=user)
-        serializer = TransactionSerializer(transactions, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+    transactions = Transaction.objects.filter(user=user)
+    serializer = TransactionSerializer(transactions, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
 
-    return Response({'error': 'Unauthorized'}, status=status.HTTP_401_UNAUTHORIZED)
+@api_view(['GET', 'POST'])
+@permission_classes([IsAuthenticated])
+def transaction_view(request):
+    if request.method == 'GET':
+        transactions = Transaction.objects.all()
+        serializer = TransactionSerializer(transactions, many=True)
+        return Response(serializer.data)
+    
+    if request.method == 'POST':
+        serializer = TransactionSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(user=request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['POST'])
 def signup_view(request):

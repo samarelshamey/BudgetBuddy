@@ -13,9 +13,10 @@ const Home = ({ isAuthenticated }) => {
                 <>
                     <Balance />
                     <IncomeExpenses />
+                    <AddTransaction />
                     <MonthlyOverview />
                     <TransactionList />
-                    <AddTransaction />
+                    
                 </>
             ) : (
                 <>
