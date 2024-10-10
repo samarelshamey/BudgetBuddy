@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import '../CSS/Login.css'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+
+    const { setIsAuthenticated } = useContext(AuthContext); 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -22,9 +25,10 @@ const Login = () => {
 
             const { access, refresh } = response.data;
 
-            localStorage.setItem('access_token', access);
-            localStorage.setItem('refresh_token', refresh);
-            
+            sessionStorage.setItem('access_token', access);
+            sessionStorage.setItem('refresh_token', refresh);
+            setIsAuthenticated(true);
+
             console.log('Login successful:', response.data);
             
             window.location.href = '/'; 

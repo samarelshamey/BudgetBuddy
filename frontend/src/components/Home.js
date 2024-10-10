@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import AddTransaction from './AddTransaction';
 import Balance from './Balance';
 import MonthlyOverview from './MonthlyOverview';
 import TransactionList from './TransactionList';
 import '../CSS/Home.css'
 import { IncomeExpenses } from './IncomeExpenses';
+import { AuthContext } from '../context/AuthContext';
 
-const Home = ({ isAuthenticated }) => {
+const Home = () => {
+    const { isAuthenticated } = useContext(AuthContext);
     return (
         <div>
             {isAuthenticated ? (

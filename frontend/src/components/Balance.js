@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import { GlobalContext } from '../context/GlobalState'
 import '../CSS/Balance.css'
 
@@ -20,6 +20,11 @@ export const Balance = () => {
     const { transactions} = useContext(GlobalContext);
     const amounts = transactions.map(transaction => transaction.amount);
     const total = amounts.reduce((acc, item) => (acc += item), 0);
+
+    useEffect(() => {
+        sessionStorage.setItem('totalBalance', total);
+    }, [total]);
+
 return (
 <div className='Balance-container'>
     <h4 className="balance-heading">Your Balance</h4>

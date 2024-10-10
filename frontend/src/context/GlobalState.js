@@ -34,11 +34,20 @@ export const GlobalProvider = ({ children }) => {
         fetchTransactions();
     }, []);
 
+    function setTransactions(transactions) {
+        dispatch({
+            type: 'SET_TRANSACTIONS',
+            payload: transactions,
+        });
+    }
+
     function deleteTransaction(id) {
         dispatch({
             type: 'DELETE_TRANSACTION',
             payload: id,
         });
+        const updatedTransactions = state.transactions.filter(transaction => transaction.id !== id);
+        localStorage.setItem('transactions', JSON.stringify(updatedTransactions));
     }
 
     function addTransaction(transaction) {
@@ -46,13 +55,17 @@ export const GlobalProvider = ({ children }) => {
             type: 'ADD_TRANSACTION',
             payload: transaction,
         });
+        const updatedTransactions = [...state.transactions, transaction];
+        sessionStorage.setItem('transactions', JSON.stringify(updatedTransactions));
     }
+    
 
     return (
         <GlobalContext.Provider value={{
             transactions: state.transactions,
             deleteTransaction,
             addTransaction,
+            setTransactions,
         }}>
             {children}
         </GlobalContext.Provider>

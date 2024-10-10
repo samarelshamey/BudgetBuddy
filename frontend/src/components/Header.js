@@ -8,8 +8,9 @@
     export const Header = () => {
         const { isAuthenticated } = useContext(AuthContext); 
         const handleLogout = () => {
-                localStorage.removeItem('access_token');
-                localStorage.removeItem('refresh_token');
+                sessionStorage.removeItem('access_token');
+                sessionStorage.removeItem('refresh_token');
+                sessionStorage.removeItem('transactions')
                 window.location.href = '/login';
             };
             

@@ -9,7 +9,7 @@ const AddTransaction = () => {
     const [isIncome, setIsIncome] = useState(null);
     
 
-    const { addTransaction } = useContext(GlobalContext);
+    const { addTransaction, transactions } = useContext(GlobalContext);
 
     const onSubmit = e => {
         e.preventDefault();
@@ -39,7 +39,9 @@ const AddTransaction = () => {
         setAmount('');
         setIsClicked(true);
         setIsIncome(null);
-    }
+
+        localStorage.setItem('transactions', JSON.stringify([...transactions, newTransaction]));
+    };
 
 return (
 <>
