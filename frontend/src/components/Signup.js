@@ -38,7 +38,7 @@ function Signup() {
 
     return (
         <div className="auth-form">
-            <h2>Signup</h2>
+            <h2>Register!</h2>
             {error && <p className="error">{error}</p>}
             <form onSubmit={handleSubmit}>
             <div>

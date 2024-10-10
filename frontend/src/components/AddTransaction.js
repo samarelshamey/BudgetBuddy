@@ -43,7 +43,7 @@ const AddTransaction = () => {
 
 return (
 <>
-    <h3>Transaction Time!</h3>
+    <h3 className='add-transaction'>Transaction Time!</h3>
         <form onSubmit={onSubmit}>
         
             <div className="form-control">

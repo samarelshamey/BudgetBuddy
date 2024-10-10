@@ -1,23 +1,21 @@
-/* Balance.css */
-
 .balance-heading {
-    color: #333;               /* Dark grey color for the subtitle */
-    font-size: 30px;          /* Font size for the subtitle */
+    color: #333;
+    font-size: 30px;
     margin-top: 30px;
-    margin-bottom: 10px;      /* Space below the subtitle */
+    margin-bottom: 10px;
     text-align: center;
 }
 
 h1 {
-    color: #4CAF50;           /* Green color for the balance */
-    font-size: 32px;          /* Font size for the balance */
-    margin: 0;                /* Remove default margin */
-    font-weight: bold;        /* Bold font for emphasis */
+    color: #4CAF50;
+    font-size: 32px;
+    margin: 0;
+    font-weight: bold;
     text-align: center;
 }
 
 .balance-container {
-    padding: 20px;            /* Add padding around the balance component */
-    background-color: #f9f9f9; /* Optional background color */
-    border-radius: 5px;      /* Optional border radius */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
 }

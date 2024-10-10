@@ -2,6 +2,8 @@
     import { Link } from 'react-router-dom';
     import '../CSS/Header.css'
     import { AuthContext } from '../context/AuthContext';
+    import icon from '../icon.png';
+
 
     export const Header = () => {
         const { isAuthenticated } = useContext(AuthContext); 
@@ -13,6 +15,7 @@
             
             return (
                 <header>
+                    <img src={icon} alt="BudgetBuddy Logo" className="logo" />
                     <h2>BudgetBuddy</h2>
                 <nav>
                     <Link to="/">Home</Link>
@@ -21,7 +24,6 @@
                     ) : (
                     <>
                         <Link to="/login">Login</Link>
-                        <Link to="/signup">Signup</Link>
                     </>
                     )}
                 </nav>
