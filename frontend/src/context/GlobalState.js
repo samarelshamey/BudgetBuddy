@@ -56,7 +56,7 @@ export const GlobalProvider = ({ children }) => {
             payload: transaction,
         });
         const updatedTransactions = [...state.transactions, transaction];
-        sessionStorage.setItem('transactions', JSON.stringify(updatedTransactions));
+        localStorage.setItem('transactions', JSON.stringify(updatedTransactions));
     }
     
 
