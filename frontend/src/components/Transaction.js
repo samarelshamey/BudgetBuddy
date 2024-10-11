@@ -7,7 +7,6 @@ const Transaction = ({ transaction }) => {
     const sign = transaction.amount < 0 ? '-' : '+';
     const capitalizedText = transaction.text.charAt(0).toUpperCase() + transaction.text.slice(1);
 
-
     return (
         <div className='Transaction'>
         <li className={transaction.amount < 0 ? 'minus' : 'plus'}>

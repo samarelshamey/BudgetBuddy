@@ -35,20 +35,21 @@ def user_transactions_view(request):
     serializer = TransactionSerializer(transactions, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
-@api_view(['GET', 'POST'])
+@api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def transaction_view(request):
-    if request.method == 'GET':
-        transactions = Transaction.objects.all()
-        serializer = TransactionSerializer(transactions, many=True)
-        return Response(serializer.data)
-    
-    if request.method == 'POST':
-        serializer = TransactionSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save(user=request.user)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+def get_transactions(request):
+    transactions = Transaction.objects.filter(user=request.user)
+    serializer = TransactionSerializer(transactions, many=True)
+    return Response(serializer.data)
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def create_transaction(request):
+    serializer = TransactionSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save(user=request.user)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['POST'])
 def signup_view(request):

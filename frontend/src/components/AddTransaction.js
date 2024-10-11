@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react'
 import { GlobalContext } from '../context/GlobalState';
 import '../CSS/AddTransaction.css'
+import { AuthContext } from '../context/AuthContext';
 
 const AddTransaction = () => {
     const [text, setText] = useState('');
     const [amount, setAmount] = useState('');
     const [isClicked, setIsClicked] = useState(false);
     const [isIncome, setIsIncome] = useState(null);
+    const { isAuthenticated } = useContext(AuthContext);
     
 
     const { addTransaction, transactions } = useContext(GlobalContext);
@@ -39,8 +41,10 @@ const AddTransaction = () => {
         setAmount('');
         setIsClicked(true);
         setIsIncome(null);
-
-        localStorage.setItem('transactions', JSON.stringify([...transactions, newTransaction]));
+        
+        if (isAuthenticated) {
+            localStorage.setItem('transactions', JSON.stringify([...transactions, newTransaction]));
+        }
     };
 
 return (
@@ -80,13 +84,13 @@ return (
                             type="radio"
                             name="transactionType"
                             checked={isIncome === false}
-                            onChange={() => setIsIncome(false)} // Set to expense
+                            onChange={() => setIsIncome(false)}
                         />
                         Expense
                     </label>
             </div>
             <button className={`btn ${text.trim() && amount !== 0 ? 'active' : ''} ${isClicked ? 'clicked' : ''}`}>
-                Add New Transaction
+                Add
             </button>
         </form>
 </>
