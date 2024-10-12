@@ -1,68 +1,94 @@
-/* Header Container */
 .header-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
     padding: 15px 30px;
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    font-family: 'Dancing Script', cursive;
-    position: sticky;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     top: 0;
     z-index: 10;
+    height: max-content;
 }
 
 .logo {
-    height: 60px;
-    width: 60px;
-    object-fit: contain;
-    margin: 0;
+    height: 80px;
+    width: 80px;
+    display: inline;
+    margin-bottom: -10px;
     padding: auto;
 }
 
-/* Title */
 h2 {
     margin: 0;
     font-size: 48px;
     color: #4CAF50;
+    display: inline;
+    padding: 20px;
 }
-
-/* Navigation Links and Buttons */
-nav {
-    display: flex;
+.nav-left
+.nav-right {
+    display: inline;
     align-items: center;
     gap: 15px;
-}
+    font-family: 'Courier New', Courier, monospace;
+} 
 
-nav a, 
-nav button {
-    color: white;
-    background-color: #45a049;
+
+.nav-right a,
+.nav-right button {
+    color: rgb(0, 0, 0);
+    background-color: white;
     text-decoration: none;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 24px;
+    font-weight: bold;
     transition: background-color 0.3s ease-in-out;
+    font-family: 'Dancing Script', cursive;
 }
 
-nav a:hover, 
-nav button:hover {
+.nav-right a:hover,
+.nav-right button:hover {
     background-color: #3e8e41;
     cursor: pointer;
 }
 
-/* Responsive Design for Smaller Screens */
+
+.nav-left a,
+.nav-left button {
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+    font-family: 'Dancing Script', cursive;
+}
+
+.nav-left a:hover,
+.nav-left button:hover {
+    background-color: #3e8e41;
+    cursor: pointer;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .header-container {
-        flex-direction: column;
+        flex-direction: column; /* Stack vertically */
         align-items: flex-start;
         padding: 10px;
     }
 
-    nav {
-        flex-wrap: wrap;
-        gap: 10px;
+    .navbar-left {
+        margin-bottom: 10px;
+    }
+
+    .navbar-right {
+        width: 100%; /* Full width for buttons/links */
         justify-content: flex-start;
     }
 

@@ -38,7 +38,6 @@ function Signup() {
 
     return (
         <div className="auth-form">
-            <h2>Register!</h2>
             {error && <p className="error">{error}</p>}
             <form onSubmit={handleSubmit}>
             <div>

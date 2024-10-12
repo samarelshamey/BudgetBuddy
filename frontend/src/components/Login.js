@@ -42,7 +42,6 @@ const Login = () => {
 
     return (
         <div className="auth-form">
-            <h2>Login</h2>
             {error && <p className="error">{error}</p>}
             <form onSubmit={handleSubmit}>
                 <div>

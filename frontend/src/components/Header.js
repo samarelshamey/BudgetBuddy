@@ -16,10 +16,13 @@
             
             return (
                 <header className="header-container">
-                    <nav>
+                        <div className='nav-left'>
                             <img src={icon} alt="BudgetBuddy Logo" className="logo" />
                             <h2>Budget Buddy</h2>
                             <Link to="/">Home</Link>
+                            <Link to="/about">About</Link>
+                        </div>
+                        <div className='nav-right'>
                             {isAuthenticated ? (
                             <button onClick={handleLogout}>Logout</button>
                             ) : (
@@ -27,7 +30,8 @@
                                 <Link to="/login">Login</Link>
                             </>
                             )}
-                    </nav>
+                        </div>
+                    
                 </header>
             );
     }
