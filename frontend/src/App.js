@@ -16,16 +16,18 @@ const App = () => {
         <AuthProvider>
         <div>
             <Header />
-            <Routes>
-                <Route
-                    path="/"
-                    element={
-                        <Home isAuthenticated={isAuthenticated} />
-                    }
-                />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Signup />} />
-            </Routes>
+            <main>
+                <Routes>
+                    <Route
+                        path="/"
+                        element={
+                            <Home isAuthenticated={isAuthenticated} />
+                        }
+                    />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/signup" element={<Signup />} />
+                </Routes>
+            </main>
             <Footer />
         </div>
         </AuthProvider>

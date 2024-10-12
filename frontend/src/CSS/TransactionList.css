@@ -1,5 +1,6 @@
 :root{
     --heading-color: #343a40;
+    --primary-color: #007bff;
 }
 
 .transaction_list {
@@ -8,7 +9,10 @@
     letter-spacing: 1px;
     color: var(--heading-color);
     text-align: center;
-    margin: 0;
+    margin: 20px 0 10px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 .list {

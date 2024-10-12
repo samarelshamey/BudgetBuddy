@@ -10,21 +10,39 @@ import { AuthContext } from '../context/AuthContext';
 const Home = () => {
     const { isAuthenticated } = useContext(AuthContext);
     return (
-        <div>
+        <div className="home-container">
             {isAuthenticated ? (
                 <>
-                    <Balance />
-                    <IncomeExpenses />
-                    <AddTransaction />
-                    <MonthlyOverview />
-                    <TransactionList />
-                    
+                    <section className="section-balance">
+                        <Balance />
+                    </section>
+                    <section className="section-income-expenses">
+                        <IncomeExpenses />
+                    </section>
+                    <section className="section-add-transaction">
+                        <AddTransaction />
+                    </section>
+                    <div className='section-overview-transaction'>
+                        <section className="section-monthly-overview">
+                            <MonthlyOverview />
+                        </section>
+                        <section className="section-transaction-list">
+                            <TransactionList />
+                        </section>
+                    </div>
+                        
                 </>
             ) : (
                 <>
-                    <Balance />
-                    <IncomeExpenses />
-                    <AddTransaction />
+                    <section className="section-balance">
+                        <Balance />
+                    </section>
+                    <section className="section-income-expenses">
+                        <IncomeExpenses />
+                    </section>
+                    <section className="section-add-transaction">
+                        <AddTransaction />
+                    </section>
                 </>
             )}
         </div>
