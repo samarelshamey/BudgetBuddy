@@ -12,6 +12,9 @@
 .section-add-transaction,
 .section-monthly-overview,
 .section-transaction-list {
+    width: 100%; 
+    max-width: 100%; 
+    min-height: 150px;
     background-color: #f8f8f8;
     padding: 20px;
     border-radius: 8px;
@@ -26,15 +29,25 @@
     max-width: 100%;
 }
 
-.section-balance {
-    width: 100%; 
+.section-balance-income-expenses {
+    display: flex;
+    gap: 10px;
+    justify-content: space-evenly;
+    width: 100%;
     max-width: 100%;
 }
 
-.section-income-expenses {
-    width: 100%; 
+.section-balance
+.balance-income-expenses {
+    flex: 1;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
     max-width: 100%;
 }
+
 
 .section-add-transaction {
     width: 100%;

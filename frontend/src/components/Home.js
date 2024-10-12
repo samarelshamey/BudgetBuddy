@@ -13,12 +13,14 @@ const Home = () => {
         <div className="home-container">
             {isAuthenticated ? (
                 <>
-                    <section className="section-balance">
-                        <Balance />
-                    </section>
-                    <section className="section-income-expenses">
-                        <IncomeExpenses />
-                    </section>
+                    <div className='section-balance-income-expenses'>
+                        <section className="section-balance">
+                            <Balance />
+                        </section>
+                        <section className="section-income-expenses">
+                            <IncomeExpenses />
+                        </section>
+                    </div>
                     <section className="section-add-transaction">
                         <AddTransaction />
                     </section>
@@ -34,12 +36,14 @@ const Home = () => {
                 </>
             ) : (
                 <>
-                    <section className="section-balance">
-                        <Balance />
-                    </section>
-                    <section className="section-income-expenses">
-                        <IncomeExpenses />
-                    </section>
+                    <div className='section-balance-income-expenses'>
+                        <section className="section-balance">
+                            <Balance />
+                        </section>
+                        <section className="section-income-expenses">
+                            <IncomeExpenses />
+                        </section>
+                    </div>
                     <section className="section-add-transaction">
                         <AddTransaction />
                     </section>

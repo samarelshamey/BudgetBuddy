@@ -15,19 +15,23 @@
             };
             
             return (
-                <header>
-                    <img src={icon} alt="BudgetBuddy Logo" className="logo" />
-                    <h2>BudgetBuddy</h2>
-                <nav>
-                    <Link to="/">Home</Link>
-                    {isAuthenticated ? (
-                    <button onClick={handleLogout}>Logout</button>
-                    ) : (
-                    <>
-                        <Link to="/login">Login</Link>
-                    </>
-                    )}
-                </nav>
+                <header className="header-container">
+                    <nav>
+                        <div className="navbar-left">
+                            <img src={icon} alt="BudgetBuddy Logo" className="logo" />
+                            <h2>Budget Buddy</h2>
+                            <Link to="/">Home</Link>
+                        </div>
+                        <div className="navbar-right">
+                            {isAuthenticated ? (
+                            <button onClick={handleLogout}>Logout</button>
+                            ) : (
+                            <>
+                                <Link to="/login">Login</Link>
+                            </>
+                            )}
+                        </div>
+                    </nav>
                 </header>
             );
     }
