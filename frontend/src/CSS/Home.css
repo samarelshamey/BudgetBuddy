@@ -64,7 +64,7 @@
     max-width: 100%;
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
     .section-balance,
     .section-income-expenses,
     .section-add-transaction,
@@ -72,4 +72,4 @@
     .section-transaction-list {
         width: 100%;
     }
-} */
+}
