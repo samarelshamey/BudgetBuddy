@@ -27,6 +27,7 @@
     justify-content: space-between;
     width: 100%;
     max-width: 100%;
+    padding: auto;
 }
 
 .section-balance-income-expenses {
