@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../CSS/Signup.css'
+import CustomButton from './AnimatedButton';
 
 function Signup() {
     const [username, setUsername] = useState('');
@@ -76,9 +77,11 @@ function Signup() {
                         required 
                     />
                 </div>
-                <button type="submit" disabled={loading}>
-                    {loading ? 'Signing up...' : 'Signup'}
-                </button>
+                <CustomButton 
+                    onClick={handleSubmit} 
+                    loading={loading} 
+                    text="Signup" 
+                />
             </form>
         </div>
     );

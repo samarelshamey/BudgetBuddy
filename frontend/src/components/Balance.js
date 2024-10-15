@@ -1,6 +1,7 @@
 import React, {useContext, useEffect} from 'react'
 import { GlobalContext } from '../context/GlobalState'
 import '../CSS/Balance.css'
+import money from '../imgs/money.png'
 
 
 function moneyFormatter(num) {
@@ -27,6 +28,7 @@ export const Balance = () => {
 
 return (
 <div className='Balance-container'>
+    <img src={money} alt="balance" className="balance-image" />
     <h4 className="balance-heading">Your Balance</h4>
     <h1>{moneyFormatter(total)}</h1>
 </div>

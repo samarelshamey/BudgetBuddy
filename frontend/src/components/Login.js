@@ -3,6 +3,8 @@ import axios from 'axios';
 import '../CSS/Login.css'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
+import CustomButton from './AnimatedButton.js';
+
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -64,9 +66,11 @@ const Login = () => {
                         required
                     />
                 </div>
-                <button type="submit" disabled={loading}>
-                    {loading ? 'Logging in...' : 'Login'}
-                </button>
+                <CustomButton 
+                    onClick={handleSubmit} 
+                    loading={loading} 
+                    text="Login" 
+                />
             </form>
             <p>
                 Don't have an account? <Link to="/signup">Register NOW!</Link>

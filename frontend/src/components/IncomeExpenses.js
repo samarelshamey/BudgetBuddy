@@ -1,6 +1,8 @@
 import React, {useContext} from 'react'
 import { GlobalContext } from '../context/GlobalState'
 import '../CSS/IncomeExpenses.css'
+import IncomeImg from '../imgs/income.png'
+import expensesImg from '../imgs/expense.png'
 
 function moneyFormatter(num) {
     let p = num.toFixed(2).split('.');
@@ -30,10 +32,12 @@ export const IncomeExpenses = () => {
     return (
     <div className="inc-exp-container">
         <div>
+            <img src={IncomeImg} alt="IncomeImg" className="income-image" />
             <h4 className="income-expenses-heading">Income</h4>
             <p className="money plus">{moneyFormatter(income)}</p>
         </div>
         <div>
+            <img src={expensesImg} alt="expensesImg" className="expenses-image" />
             <h4 className="income-expenses-heading">Expense</h4>
             <p className="money minus">{moneyFormatter(expense)}</p>
         </div>

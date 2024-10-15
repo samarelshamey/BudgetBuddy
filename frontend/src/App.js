@@ -1,38 +1,100 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Header } from './components/Header';
 import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import { AuthProvider } from './context/AuthContext';
-import Footer from './components/Footer'
 import About from './components/About';
+import Footer from './components/Footer';
+import { AuthProvider } from './context/AuthContext';
 
+const pageVariants = {
+initial: { opacity: 0, y: 50 },
+in: { opacity: 1, y: 0 },
+out: { opacity: 0, y: -50 },
+};
+
+const pageTransition = {
+duration: 0.5,
+ease: 'easeInOut',
+};
 
 const App = () => {
-    const isAuthenticated = !!localStorage.getItem('access_token');
+const isAuthenticated = !!localStorage.getItem('access_token');
+const location = useLocation(); // Track the current location for transitions
 
-    return (
-        <AuthProvider>
-        <div>
-            <Header />
-            <main>
-                <Routes>
-                    <Route
-                        path="/"
-                        element={
-                            <Home isAuthenticated={isAuthenticated} />
-                        }
-                    />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/signup" element={<Signup />} />
-                </Routes>
-            </main>
-            <Footer />
-        </div>
-        </AuthProvider>
-    );
+return (
+<AuthProvider>
+    <div>
+    <Header />
+    <main>
+        {/* AnimatePresence ensures the outgoing route animates when switching */}
+        <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+            <Route
+            path="/"
+            element={
+                <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+                >
+                <Home isAuthenticated={isAuthenticated} />
+                </motion.div>
+            }
+            />
+            <Route
+            path="/login"
+            element={
+                <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+                >
+                <Login />
+                </motion.div>
+            }
+            />
+            <Route
+            path="/signup"
+            element={
+                <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+                >
+                <Signup />
+                </motion.div>
+            }
+            />
+            <Route
+            path="/about"
+            element={
+                <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+                >
+                <About />
+                </motion.div>
+            }
+            />
+        </Routes>
+        </AnimatePresence>
+    </main>
+    <Footer />
+    </div>
+</AuthProvider>
+);
 };
 
 export default App;

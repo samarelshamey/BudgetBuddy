@@ -2,7 +2,7 @@
     import { Link } from 'react-router-dom';
     import '../CSS/Header.css'
     import { AuthContext } from '../context/AuthContext';
-    import icon from '../icon.png';
+    import icon from '../imgs/icon.png';
 
 
     export const Header = () => {
