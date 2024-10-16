@@ -7,6 +7,6 @@ urlpatterns = [
     path('signup/', signup_view, name='signup'),
     path('login/', CustomTokenObtainPairView.as_view(), name='login'),
     path('user-transactions/', user_transactions_view, name='user-transactions'),
-    path('user-transactions/', get_transactions, name='get-transactions'),
+    path('get-transactions/', get_transactions, name='get-transactions'),
     path('add-transaction/', create_transaction, name='create-transaction'),
 ]

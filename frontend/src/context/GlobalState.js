@@ -13,7 +13,7 @@ export const GlobalProvider = ({ children }) => {
 
     useEffect(() => {
         const fetchTransactions = async () => {
-            const token = localStorage.getItem('access_token');
+            const token = sessionStorage.getItem('access_token');
             if (token) {
                 try {
                     const response = await axios.get('http://localhost:8000/api/user-transactions/', {
@@ -55,6 +55,7 @@ export const GlobalProvider = ({ children }) => {
             type: 'ADD_TRANSACTION',
             payload: transaction,
         });
+        
         const updatedTransactions = [...state.transactions, transaction];
         localStorage.setItem('transactions', JSON.stringify(updatedTransactions));
     }

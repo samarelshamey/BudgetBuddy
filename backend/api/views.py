@@ -31,7 +31,7 @@ class CustomTokenObtainPairView(TokenObtainPairView):
 @permission_classes([IsAuthenticated])
 def user_transactions_view(request):
     user = request.user
-    transactions = Transaction.objects.filter(user=user)
+    transactions = Transaction.objects.filter(user=request.user)
     serializer = TransactionSerializer(transactions, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
