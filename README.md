@@ -1,6 +1,6 @@
 # Budget Buddy
 
-**Budget Buddy** is a personal finance tracking application that helps users manage their expenses and income efficiently. With a user-friendly interface, it allows users to keep track of their transactions, categorize them, and view their financial health at a glance.
+**Budget Buddy** is a personal finance tracking application that helps users manage their expenses and income efficiently. With a user-friendly interface, it allows users to keep track of their transactions, and view their financial health at a glance.
 
 ## Table of Contents
 
@@ -17,7 +17,6 @@
 - User authentication (signup and login)
 - Track income and expenses
 - View transaction history
-- Categorize transactions
 - Summary of financial health (income vs. expenses)
 
 ## Technologies Used

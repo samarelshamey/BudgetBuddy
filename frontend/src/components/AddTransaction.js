@@ -80,7 +80,7 @@ return (
                             type="radio"
                             name="transactionType"
                             checked={isIncome === false}
-                            onChange={() => setIsIncome(false)} // Set to expense
+                            onChange={() => setIsIncome(false)}
                         />
                         Expense
                     </label>
