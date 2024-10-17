@@ -22,14 +22,13 @@ ease: 'easeInOut',
 
 const App = () => {
 const isAuthenticated = !!localStorage.getItem('access_token');
-const location = useLocation(); // Track the current location for transitions
+const location = useLocation();
 
 return (
 <AuthProvider>
     <div>
     <Header />
     <main>
-        {/* AnimatePresence ensures the outgoing route animates when switching */}
         <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
             <Route
@@ -43,6 +42,20 @@ return (
                 transition={pageTransition}
                 >
                 <Home isAuthenticated={isAuthenticated} />
+                </motion.div>
+            }
+            />
+            <Route
+            path="/Home"
+            element={
+                <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+                >
+                <Home />
                 </motion.div>
             }
             />
