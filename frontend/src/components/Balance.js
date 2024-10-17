@@ -5,6 +5,12 @@ import money from '../imgs/money.png'
 
 
 function moneyFormatter(num) {
+    const number = parseFloat(num);
+
+    if (isNaN(number)) {
+        console.error("Could not convert to number:", num);
+        return '$ 0.00';
+    }
     let p = num.toFixed(2).split('.');
     return (
         '$ ' + (p[0].split('')[0]=== '-' ? '-' : '') +
